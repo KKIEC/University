@@ -9,7 +9,14 @@
           Email:
           = @student.email
         %p
-          Course Enrollments: None
+          Course Enrollments:
+          - if @student.courses.empty?
+            None
+          - else
+            %ul
+              - @student.courses.each do |course|
+                %li
+                  = course.name
 
     - if current_user == @student
       = link_to '<i class="material-icons right">create</i>Edit your profile'.html_safe,

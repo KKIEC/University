@@ -14,7 +14,7 @@
           %p
             = course.description
         %div.card-action
-          %a{ href: "#"}
-            Enroll
+          - if logged_in? && !(current_user.courses.include?(course))
+            = link_to 'Enroll', course_enroll_path(course_id: course.id), method: :post
           %a{ href: "#"}
             Info
