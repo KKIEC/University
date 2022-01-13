@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def about
+  skip_before_action :require_user
 
-  end
+  def about; end
 end
