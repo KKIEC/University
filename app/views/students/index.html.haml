@@ -1,0 +1,21 @@
+%div.row
+  %div.col.s12.center-align
+    %h3
+      Students Directory
+
+%div.row
+  - @students.each do |student|
+    %div.col.s6.m6
+      %div.card.blue-grey.darken-1
+        %div.card-content.white-text
+          %span.card-title
+            Name:
+            = student.name
+          %p
+            Email:
+            = student.email
+          %p
+            Course Enrollments
+        %div.card-action
+          %a{ href: "#"}
+            View Profile
